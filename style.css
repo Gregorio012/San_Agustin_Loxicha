@@ -42,39 +42,83 @@ header {
   background: url("fondo.jpeg") no-repeat center/cover;
 }
 
-/* Encabezado fondo */
+/* Overlay oscuro para mejorar legibilidad del texto */
 header .overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.642);
+  background: rgba(0, 0, 0, 0.55);
   z-index: 0;
 }
 
-/* Contenido sobre el encabezado */
+/* Contenido del header (texto) */
 .header-content {
   position: relative;
-  z-index: 5;
+  z-index: 2;
+  animation: fadeInDown 1s ease;
 }
 
-/* Escudo Mixistlan logo2.png */
-header .escudo {
-  position: absolute;
-  top: 70px;
-  right: 120px;
-  width: 220px;
-  z-index: 6;
+/* Texto */
+header h1 {
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+  margin: 0.2rem 0;
 }
 
-/* Escudo izquierda Oaxaca escudo.png*/
+header p {
+  font-weight: 300;
+  margin: 0;
+}
+
+/* Escudo izquierda */
 header .escudo2 {
   position: absolute;
-  top: -60px;
-  left: -330px;
+  top: -80px;
+  left: -310px;
+  width: 270px;
+  z-index: 3;
+  opacity: 0.95;
+}
+
+/* Escudo derecha */
+header .escudo {
+  position: absolute;
+  top: 50px;
+  right: 90px;
   width: 250px;
-  z-index: 2;
+  z-index: 3;
+  opacity: 0.95;
+}
+
+/* ====== RESPONSIVO ====== */
+@media (max-width: 900px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  header .escudo, header .escudo2 {
+    width: 160px;
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    height: 50vh;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  header p {
+    font-size: 0.9rem;
+  }
+
+  header .escudo, header .escudo2 {
+    width: 120px;
+    top: 10px;
+  }
 }
 
 /* Títulos */
